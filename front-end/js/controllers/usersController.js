@@ -6,7 +6,7 @@ UserController.$inject = ['User','TokenService']
 function UserController(User, TokenService) {
   var self = this;
 
-  self.all    = [];
+  self.all   = [];
   self.user  = {};
 
   // Function to display the message back to the User

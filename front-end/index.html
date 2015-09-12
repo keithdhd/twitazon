@@ -16,10 +16,10 @@
   <!-- Style -->
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
-<body ng-app="mi6" ng-controller="usersController as users">
+<body ng-app="Twitzon" ng-controller="usersController as users">
   <header>
     <h1>Become an Instant Bestseller</h1>
-    <h2>Make a book cover fomr our Twitter feed.</h2>
+    <h2>Make a book cover from your Twitter feed.</h2>
     <nav>
       <ul>
         <li ng-hide="users.isLoggedIn()"><a href="#authorize">Authorize</a></li>
@@ -67,11 +67,11 @@
         <label for="email">Email</label>
         <input type="text" name="email" placeholder="Email" ng-model="users.user.email">
 
-        <label for="realname">Lirst Name</label>
-        <input type="realname" name="firstname" placeholder="First name" ng-model="users.user.firstname">
+        <label for="firstname">First Name</label>
+        <input type="firstname" name="firstname" placeholder="First name" ng-model="users.user.firstname">
 
         <label for="lastname">Last Name</label>
-        <input type="lastname" name="lastname" placeholder="Last name" ng-model="users.user.firstname">
+        <input type="lastname" name="lastname" placeholder="Last name" ng-model="users.user.lastname">
 
         <label for="password">Password</label>
         <input type="password" name="password" placeholder="Password" ng-model="users.user.password">
