@@ -1,5 +1,5 @@
 var LocalStrategy = require('passport-local').Strategy;
-var User          = require("../models/agent");
+var User          = require("../models/user");
 var jwt           = require('jsonwebtoken');
 
 module.exports = function(passport) {
@@ -12,13 +12,14 @@ module.exports = function(passport) {
       User.findOne({ 'email' : email }, function(err, user) {
 
         if (err) return done(err);
-        if (agent) return done(null, false);
+        if (user) return done(null, false);
 
-        var newUser       = new User();
-        newUser.email     = email;
-        newUser.realname  = req.body.firstname;
-        newUser.lastname  = req.body.lastname;
-        newUser.password  = newUser.encrypt(password);
+        var newUser           = new User();
+        newUser.email         = email;
+        newUser.firstname     = req.body.firstname;
+        newUser.lastname      = req.body.lastname;
+        newUser.password      = newUser.encrypt(password);
+        newUser.twitterHandle = req.body.twitterHandle;
 
         newUser.save(function(err) {
           if (err) return done(err);

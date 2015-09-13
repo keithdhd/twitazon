@@ -1,0 +1,21 @@
+<section ng-hide="users.isLoggedIn()">
+  <h3>Sign Up</h3>
+  <form id="join" ng-hide="users.isLoggedIn()" ng-submit="users.join()">
+    <label for="email">Email</label>
+    <input type="text" name="email" placeholder="Email" ng-model="users.user.email">
+
+    <label for="firstname">First Name</label>
+    <input type="text" name="firstname" placeholder="First name" ng-model="users.user.firstname">
+
+    <label for="lastname">Last Name</label>
+    <input type="text" name="lastname" placeholder="Last name" ng-model="users.user.lastname">
+
+    <label for="twitterHandle">Twitter Handle</label>
+    <input type="text" name="twitterHandle" placeholder="Twitter handle" ng-model="users.user.twitterHandle">
+
+    <label for="password">Password</label>
+    <input type="password" name="password" placeholder="Password" ng-model="users.user.password">
+
+    <input type="submit" value="Sign Up">
+  </form>
+</section>

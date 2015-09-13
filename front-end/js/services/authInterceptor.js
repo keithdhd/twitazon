@@ -26,5 +26,4 @@ function AuthInterceptor(API, TokenService) {
       return res;
     }
   }
-
 }

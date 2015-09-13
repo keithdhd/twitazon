@@ -1,6 +1,27 @@
-angular
-  .module('Twitzon', ['angular-jwt', 'ngResource'])
+(function() {
+  'use strict';
+
+  angular
+  .module('Twitzon', ['angular-jwt',  'ngResource', 'ngMaterial', 'ui.router'])
   .constant('API', 'http://localhost:3000/api')
-  .config(function($httpProvider) {
+  .config(function($httpProvider, $stateProvider, $mdThemingProvider, $urlRouterProvider) {
+    
     $httpProvider.interceptors.push('authInterceptor');
-  })
+
+
+    //Let's configure our color theme!
+    $mdThemingProvider.theme('default')
+      .primaryPalette('amber')
+      .accentPalette('grey')
+
+    // If a route other than status is requested,
+    // go to the auth route
+    $urlRouterProvider.otherwise('/authorize');
+
+    $stateProvider
+      .state('authorize', {
+        url: '/authorize',
+        templateUrl: './js/views/authorize.html'
+      });
+  });
+})();

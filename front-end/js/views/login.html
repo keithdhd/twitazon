@@ -1,0 +1,29 @@
+<div class="message">
+  {{users.message}}
+</div>
+
+<div ng-show="users.isLoggedIn()">
+  <h3>Welcome {{ users.user.firstname }}</h3>
+</div>
+
+<section ng-show="users.isLoggedIn() && self.getUsers()">
+  <p>Users:</p>
+  <ul>
+    <li ng-repeat="user in users.all">
+      <strong>{{user.email}}</strong> - {{user.firstname}}
+    </li>
+  </ul>
+</section>
+
+<section ng-hide="users.isLoggedIn()">
+  <h3>Login</h3>
+  <form id="authorize" ng-hide="users.isLoggedIn()" ng-submit="users.authorize()">
+    <label for="email">Email</label>
+    <input type="text" name="email" placeholder="Email" ng-model="users.user.email">
+    
+    <label for="password">Password</label>
+    <input type="password" name="password" placeholder="Password" ng-model="users.user.password">
+    
+    <input type="submit" value="Log In">
+  </form>
+</section>

@@ -2,7 +2,7 @@ var User = require('../models/user');
 
 function indexUsers(req, res){
   User.find(function(error, users){
-    if (error) return res.status(404).json({message: 'Gnarly dude! You can't access this.});
+    if (error) return res.status(404).json({message: "Gnarly dude! You can't access this."});
     return res.status(200).send(users);
   });
 }
@@ -26,7 +26,7 @@ function showUser(req, res){
 function updateUser(req, res){
   var id = req.params.id;
   User.findById({_id: id}, function(error, user) {
-    if (error) return res.status(404).send({message: 'Oops! No user with that name'})
+    if (error) return res.status(404).send({message: "Oops! No user with that name"})
 
     if (req.body.firstname) user.firstname = req.body.firstname;
     if (req.body.lastname) user.lastname = req.body.lastname;

@@ -1,0 +1,49 @@
+<md-content class="md-padding">
+  <md-tabs md-dynamic-height md-border-bottom>
+
+    <md-tab label="login">
+      <md-content class="md-padding">
+        <h1 class="md-display-2">Login</h1>
+        <md-input-container>
+          <label>Email</label>
+          <input ng-model="auth.email" type="text">
+        </md-input-container>
+        <md-input-container>
+          <label>Password</label>
+          <input type="password" ng-model="auth.password" type="text">
+        </md-input-container>
+        <md-button class="md-raised md-warn" ng-click="auth.login()">Login</md-button>
+      </md-content>
+    </md-tab>
+
+    <md-tab label="register">
+      <md-content class="md-padding">
+        <h1 class="md-display-2">Sign Up</h1>
+        <md-input-container>
+          <label>Email</label>
+          <input ng-model="users.user.email" type="text">
+        </md-input-container>
+        <md-input-container>
+          <label>First Name</label>
+          <input ng-model="users.user.firstname" type="text">
+        </md-input-container>
+        <md-input-container>
+          <label>Last Name</label>
+          <input ng-model="users.user.lastname" type="text">
+        </md-input-container>
+        <md-input-container>
+          <label>Twitter Handle</label>
+          <input ng-model="users.user.twitterHandle" type="text">
+        </md-input-container>
+        <md-input-container>
+          <label>Password</label>
+          <input type="password" ng-model="users.user.password" type="text">
+        </md-input-container>
+        <md-button class="md-raised md-primary" ng-click="users.join()">
+          Sign Up
+        </md-button>
+      </md-content>
+    </md-tab>
+
+  </md-tabs>
+</md-content>

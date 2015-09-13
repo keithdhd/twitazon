@@ -15,7 +15,7 @@ mongoose.connect(config.database);
 require('./config/passport')(passport);
 
 // Secret JWT phrase, should move to process.env
-var secret     = config.secret;
+var secret = config.secret;
 
 // JWT access control. Important to have these before our routes!
 app

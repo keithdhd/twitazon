@@ -1,13 +1,15 @@
-angular
+(function(){
+  angular
   .module('Twitzon')
-  .controller('usersController', UserController)
+  .controller('UsersController', UserController)
 
-UserController.$inject = ['User','TokenService']
-function UserController(User, TokenService) {
-  var self = this;
+  UserController.$inject = ['User','TokenService'];
 
-  self.all   = [];
-  self.user  = {};
+  function UserController(User, TokenService) {
+    var self = this;
+
+    self.all   = [];
+    self.user  = {};
 
   // Function to display the message back to the User
   function showMessage(res) {
@@ -26,7 +28,7 @@ function UserController(User, TokenService) {
     User.join(self.user, showMessage);
   }
 
-  self.disappear = function() {
+  self.logout = function() {
     TokenService.removeToken && TokenService.removeToken();
   }
 
@@ -45,4 +47,5 @@ function UserController(User, TokenService) {
   }
 
   return self;
-}
+};
+})();

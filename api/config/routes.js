@@ -10,10 +10,10 @@ router.post('/authorize', authenticationController.login);
 router.post('/join', authenticationController.signup);
 
 router.route('/users')
-  .get(usersController.indexUser)
+  .get(usersController.indexUsers)
   .post(usersController.createUser)
 
-router.route('/agents/:id')
+router.route('/users/:id')
   .get(usersController.showUser)
   .put(usersController.updateUser)
   .delete(usersController.deleteUser)
