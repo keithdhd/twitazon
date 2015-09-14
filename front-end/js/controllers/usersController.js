@@ -46,7 +46,8 @@
 
   self.getTwitterData = function(){
     console.log("Getting twiter data for " + self.user.twitterHandle);
-    TwitterFactory.getData(self.user.twitterHandle);
+    TwitterFactory.getData(self.user.twitterHandle, self.user);
+    console.log(self.user.twitterData);
   }
 
   // Load users only if you are logged in!

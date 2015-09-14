@@ -13,6 +13,10 @@
     {{ users.user }}
   </div>
 
+  <div>
+    {{ users.user.twitterData }}
+  </div>
+
   <div ng-show="users.isLoggedIn()">
     <md-button class="md-raised md-primary" ng-click="users.getTwitterData()">Click Here</md-button>
   </div>

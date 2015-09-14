@@ -7,16 +7,17 @@
   function TwitterFactory($resource){
     var self = this;
 
-    self.getData = function(screen_name){
+    self.getData = function(screen_name, user){
       var url = 'http://localhost:3000/api/twitterData/:screen_name';
 
-      $resource( url, {screen_name: screen_name},{
-                'get': { method: 'GET' }
-                });
+      var res = $resource( url,{'get': { method: 'GET' }});
+      
+      res.get({screen_name: screen_name}, function(data){
+        user.twitterData = data;
+      })
     } 
 
     return self;
   }
 
 })();
-

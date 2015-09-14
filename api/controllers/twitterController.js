@@ -11,8 +11,7 @@ function getData(req, res){
   });
 
   twitter.get('users/show/:screen_name', { screen_name: req.params.screen_name },  function (err, data, response) {
-    console.log(data);
-    console.log("Yo yo yo yo " + req.screen_name);
+    res.send(data);
   });
 
 };
