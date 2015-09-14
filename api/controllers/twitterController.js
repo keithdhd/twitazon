@@ -10,8 +10,9 @@ function getData(req, res){
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
   });
 
-  twitter.get('users/show/:screen_name', { screen_name: 'KDHDouglas' },  function (err, data, response) {
-    console.log(data)
+  twitter.get('users/show/:screen_name', { screen_name: req.params.screen_name },  function (err, data, response) {
+    console.log(data);
+    console.log("Yo yo yo yo " + req.screen_name);
   });
 
 };
