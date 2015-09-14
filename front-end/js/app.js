@@ -2,12 +2,12 @@
   'use strict';
 
   angular
-  .module('Twitzon', ['angular-jwt',  'ngResource', 'ngMaterial', 'ui.router'])
+  .module('Twitzon', ['angular-jwt',  'ngResource', 'ngMaterial', 'ngMessages', 'ui.router'])
   .constant('API', 'http://localhost:3000/api')
+  .constant('APP_NAME', 'Twitzon')
   .config(function($httpProvider, $stateProvider, $mdThemingProvider, $urlRouterProvider) {
     
     $httpProvider.interceptors.push('authInterceptor');
-
 
     //Let's configure our color theme!
     $mdThemingProvider.theme('default')

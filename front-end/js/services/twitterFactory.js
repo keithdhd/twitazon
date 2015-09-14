@@ -1,13 +1,18 @@
-// (function(){
-//   angular.module('Twitzon', [])
-//     .factory('TwitterFactory', TwitterFactory);
+(function(){
+  angular.module('Twitzon')
+    .factory('TwitterFactory', TwitterFactory);
 
+  TwitterFactory.$inject = ['$resource'];
 
-//   function TwitterFactory(){
-//     var self = this;
+  function TwitterFactory($resource){
+    var url = '';
 
-//     return this;
-//   }
+    var TwitterResource = $resource(url, {id: '@_id'}, {
+        'getData': { method:'GET' }
+      });
 
-// })();
+    return TwitterResource;
+  }
+
+})();
 

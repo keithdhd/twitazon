@@ -1,22 +1,24 @@
 (function(){
   angular
   .module('Twitzon')
-  .controller('UsersController', UserController)
+  .controller('UsersController', UsersController)
 
-  UserController.$inject = ['User','TokenService'];
+  UsersController.$inject = ['User','TokenService', 'APP_NAME'];
 
-  function UserController(User, TokenService) {
+  function UsersController(User, TokenService, APP_NAME) {
     var self = this;
 
-    self.all   = [];
-    self.user  = {};
+    self.all      = [];
+    self.user     = {};
+    self.APP_NAME = APP_NAME; 
 
   // Function to display the message back to the User
   function showMessage(res) {
     var token = res.token ? res.token : null;
     
     // Console.log our response from the API
-    if(token) { console.log(res); }
+    // Set local user
+    if(token) { console.log(res); self.user=res.user }
     self.message =  res.message ? res.message : null;
   }
 
@@ -30,6 +32,8 @@
 
   self.logout = function() {
     TokenService.removeToken && TokenService.removeToken();
+    self.user = {};
+    self.message = null;
   }
 
   self.isLoggedIn = function() {
@@ -38,6 +42,11 @@
 
   self.getUsers = function() {
     self.all = User.query();
+  }
+
+  self.getTwitterData = function(){
+    console.log("Getting twiter data for " + self.user.twitterHandle);
+    //TwitterFactory.getData(user.twitterHandle);
   }
 
   // Load users only if you are logged in!

@@ -6,7 +6,7 @@ var UserSchema = mongoose.Schema({
   lastname      : { type: String },
   email         : { type: String, required: true, unique: true},
   password      : { type: String },
-  twitterHandle : {type: String}
+  twitterHandle : { type: String }
 });
 
 UserSchema.set('toJSON', {
@@ -14,7 +14,9 @@ UserSchema.set('toJSON', {
     var returnJson = {
       id: ret._id,
       firstname: ret.firstname,
-      lastname: ret.lastname
+      lastname: ret.lastname,
+      email: ret.email,
+      twitterHandle: ret.twitterHandle
     };
     return returnJson;
   }

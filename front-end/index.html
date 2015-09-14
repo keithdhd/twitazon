@@ -6,25 +6,23 @@
   <link rel="stylesheet" type="text/css" href="./css/style.css">
   <link rel="stylesheet" type="text/css" href="./bower_components/Materialize/dist/css/materialize.min.css">
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic">
 
- 
+ <!-- Internal JS Resources --> 
   <script src="bower_components/angular/angular.js"></script>
   <script src="bower_components/angular-jwt/dist/angular-jwt.js"></script>
   <script src="bower_components/angular-resource/angular-resource.min.js"></script>
-  
-  <!-- Internal JS Resources --> 
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <script src="bower_components/angular-animate/angular-animate.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
   <script src="bower_components/Materialize/dist/js/materialize.min.js"></script>
 
   <script src="js/app.js"></script>
   <script src="js/services/authInterceptor.js"></script>
   <script src="js/services/tokenService.js"></script>
-
+  <script src="js/services/twitterFactory.js"></script>
   <script src="js/models/User.js"></script>
   <script src="js/controllers/usersController.js"></script>
 </head>
@@ -35,7 +33,6 @@
       <ul>
         <li ng-hide="users.isLoggedIn()"><a href="#authorize">Login</a></li>
         <li ng-hide="users.isLoggedIn()"><a href="#authorize">Sign up</a></li>
-        <li ng-show="users.isLoggedIn()"<a href="#users" ng-click="users.getUsers()"><a>Users</a></li>
         <li ng-show="users.isLoggedIn()"><a ng-click="users.logout()">Logout</a></li>
       </ul>
     </nav>

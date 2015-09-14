@@ -24,16 +24,17 @@ function login(req, res, next) {
   }, function(err, user) {
     if (err) return res.status(500).send(err);
 
-    if (!user) return res.status(403).send({ message: 'No user with that name exists here.' });
+    if (!user) return res.status(401).send({ message: 'No user with that name exists here.' });
 
-    if (!user.validPassword(req.body.password)) return res.status(403).send({ message: 'Authentication failed. Wrong password.' });
+    if (!user.validPassword(req.body.password)) return res.status(401).send({ message: 'Authentication failed. Wrong password.' });
 
     var token = jwt.sign(user, secret, { expiresInMinutes: 1440 });
 
     return res.status(200).send({
       success: true,
       message: 'Get your writing boots on.',
-      token: token
+      token: token,
+      user: user
     });
   });
 };
