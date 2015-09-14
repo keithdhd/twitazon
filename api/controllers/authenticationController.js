@@ -1,4 +1,4 @@
-var User    = require('../models/user');
+var User     = require('../models/user');
 var jwt      = require('jsonwebtoken');
 var passport = require('passport');
 var secret   = require('../config/config').secret;

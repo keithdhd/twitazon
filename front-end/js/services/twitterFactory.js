@@ -5,13 +5,11 @@
   TwitterFactory.$inject = ['$resource'];
 
   function TwitterFactory($resource){
-    var url = '';
+    var url = 'http://localhost:3000/api/twitterData/:screen_name';
 
-    var TwitterResource = $resource(url, {id: '@_id'}, {
-        'getData': { method:'GET' }
-      });
-
-    return TwitterResource;
+   return $resource( url, {screen_name: 'KDHDouglas'},{
+      'get': { method: 'GET' }
+    });
   }
 
 })();

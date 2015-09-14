@@ -3,9 +3,9 @@
   .module('Twitzon')
   .controller('UsersController', UsersController)
 
-  UsersController.$inject = ['User','TokenService', 'APP_NAME'];
+  UsersController.$inject = ['User','TokenService', 'APP_NAME', 'TwitterFactory'];
 
-  function UsersController(User, TokenService, APP_NAME) {
+  function UsersController(User, TokenService, APP_NAME, TwitterFactory) {
     var self = this;
 
     self.all      = [];
@@ -46,7 +46,7 @@
 
   self.getTwitterData = function(){
     console.log("Getting twiter data for " + self.user.twitterHandle);
-    //TwitterFactory.getData(user.twitterHandle);
+    TwitterFactory.get(self.user.twitterHandle);
   }
 
   // Load users only if you are logged in!
