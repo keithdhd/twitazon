@@ -8,9 +8,10 @@
   function UsersController(User, TokenService, APP_NAME, TwitterFactory, $location) {
     var self = this;
 
-    self.all      = [];
-    self.user     = {};
-    self.APP_NAME = APP_NAME; 
+    self.all              = [];
+    self.user             = {};
+    self.screenNameSearch = '';
+    self.APP_NAME         = APP_NAME; 
 
   // Function to display the message back to the User
   function showMessage(res) {
@@ -42,7 +43,10 @@
   }
 
   self.getTwitterData = function(){
-    TwitterFactory.getData(self.user.twitterHandle, setTwitterData);
+    if(self.screenNameSearch)
+      TwitterFactory.getData(self.screenNameSearch, setTwitterData);
+    else
+      TwitterFactory.getData(self.user.twitterHandle, setTwitterData);
   }
 
   function setTwitterData(twitterData){

@@ -63,6 +63,13 @@ body{
   margin-top: 40px;
 }
 
+.book-cover-subtitle{
+  font-size: 12px;
+  color: #f2f2f2;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .book-title{
   color: #000;
   font-family: Arial, Helvetica, sans-serif;
@@ -97,15 +104,34 @@ body{
   background-color: red;
 }
 
+.more-details{
+  border-bottom: 1px solid lightgrey;
+}
+
+.more-details li{
+  list-style: circle;
+}
+
+.about-author h1{
+  color: #FF9933;
+  font-size: 20px;
+}
+
+.biography img{
+  float: left;
+}
 
 
 
+/*----------------------------- */
+/*------- Sticky Footer ------- */
+/*----------------------------- */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-
-
-
-
-
-
-
-
+main {
+  flex: 1 0 auto;
+}
