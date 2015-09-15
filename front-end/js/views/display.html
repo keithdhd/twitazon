@@ -1,0 +1,59 @@
+<div class="content-container animated fadeIn">
+  
+  <div class="row">
+    <div class="col s12 m12 top-matter">Top matter</div>
+  </div>
+  
+  <div class="row">
+        
+    <div class="col s3 m3">
+      
+      <div class="look-inside">Look inside</div>
+      
+      <div class='book-cover z-depth-2 card-image'>
+       <h1 class='book-cover-author'>{{ users.user.twitterData.name }}</h1>
+       <h2 class='book-cover-title'>The {{ users.user.twitterData.description }}</h2>
+       <h3 class='book-cover-subtitle'>Some kind of subtitle</h3>
+      </div>
+
+      <div class="expanded-view">
+        Expanded View
+        <img ng-src="{{ users.user.twitterData.profile_image_url}}" alt="">
+      </div>
+
+    </div>
+
+   <div class="col s6 m6">
+    
+    <div class="book-profile">
+      <span class="book-title">The {{ users.user.twitterData.description }}</span>
+      <span>[Kindle Edition]</span>
+      <p>
+        <a class="underline" href="{{ users.user.twitterData.entities.url.urls[0].expanded_url }}">{{ users.user.twitterData.name }} </a>(Author)
+      </p>
+    </div>
+
+    <div class="stats">
+      <ul>
+        <li>Screen name: screen name</li>
+        <li>Number of Tweets: 78</li>
+        <li>Number of Followers: 1</li>
+        <li>Number of friends: 25</li>
+        <li>Appears on: 750 lists</li>
+        <li></li>
+      </ul>
+    </div>
+
+    <div >
+      
+    </div>
+
+  </div>
+
+  <div class="col s3 m3 sidebar">
+    <div class="sidebar-top">top</div>
+    <div class="sidebar-bottom">bottom</div>
+  </div>
+
+</div>
+

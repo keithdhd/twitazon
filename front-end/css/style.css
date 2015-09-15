@@ -1,0 +1,111 @@
+body{
+  font-family:  Verdana, Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: small; 
+}
+
+.underline{
+  text-decoration: underline;
+  color: #003399;
+}
+
+.main{
+  margin: 50px;
+}
+
+.mainnav{
+  height: 100px;
+}
+
+.subnav{
+  height: 30px;
+  line-height: 30px;
+  font-color: black;
+}
+
+.searchbox{
+
+}
+
+.look-inside{
+  background-color: #f2f2f2;
+  text-align: right;
+  margin: 10px auto;
+  width: 280px;
+}
+
+.book-cover{
+  border: 1px solid black;
+  max-height: 400px;
+  max-width: 280px;
+  margin: 10px auto;
+  background-image: url('../images/subway.jpg');
+  opacity: 0.9;
+}
+
+.book-cover-author{
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  font-size: 58px;
+  padding: 5px;
+  text-transform: uppercase;
+  position: relative;
+  top: 40px;
+  text-align: center;
+}
+
+.book-cover-title{
+  font-family: 'Oswald', sans-serif;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  font-size: 60px;
+  color: #EB4E47;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.book-title{
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.7em;
+  font-weight: normal;
+}
+
+.book-profile{
+  border-bottom: 1px solid lightgrey;
+}
+
+.stats{
+  border-bottom: 1px solid lightgrey;
+}
+
+.expanded-view{
+  text-align: center;
+}
+
+.top-matter{
+  background-color: #FF9933;
+  height: 100px;
+}
+
+.sidebar-top{
+  height: 50%;
+  background-color: #FF9933;
+}
+
+.sidebar-bottom{
+  height: 50%;
+  background-color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

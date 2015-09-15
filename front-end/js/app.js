@@ -22,6 +22,10 @@
       .state('authorize', {
         url: '/authorize',
         templateUrl: './js/views/authorize.html'
-      });
+      })
+      .state('display', {
+        url: '/display',
+        templateUrl: './js/views/display.html'
+      })
   });
 })();

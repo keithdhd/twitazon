@@ -3,9 +3,12 @@
   <title>Become a Bestseller</title>
 
   <!-- Style -->
-  <link rel="stylesheet" type="text/css" href="./css/style.css">
+  <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="./bower_components/Materialize/dist/css/materialize.min.css">
+  <link rel="stylesheet" type="text/css" href="./bower_components/animate.css/animate.css">
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+  <link rel="stylesheet" type="text/css" href="./css/style.css">
 
  <!-- Internal JS Resources --> 
   <script src="bower_components/angular/angular.js"></script>
@@ -17,7 +20,7 @@
   <script src="bower_components/angular-material/angular-material.js"></script>
   <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/Materialize/dist/js/materialize.min.js"></script>
+ 
 
   <script src="js/app.js"></script>
   <script src="js/services/authInterceptor.js"></script>
@@ -29,20 +32,31 @@
 
 <body ng-controller="UsersController as users">
   <header>
-    <nav class="grey darken-4">
-      <ul>
-        <li ng-hide="users.isLoggedIn()"><a href="#authorize">Login</a></li>
-        <li ng-hide="users.isLoggedIn()"><a href="#authorize">Sign up</a></li>
-        <li ng-show="users.isLoggedIn()"><a ng-click="users.logout()">Logout</a></li>
-      </ul>
+    <nav class="grey darken-4 mainnav">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">twitazon.com</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li ng-show="users.isLoggedIn()">
+            <input type="search">
+          </li>
+          <li ng-hide="users.isLoggedIn()"><a href="#authorize">Login</a></li>
+          <li ng-hide="users.isLoggedIn()"><a href="#authorize">Sign up</a></li>
+          <li ng-show="users.isLoggedIn()"><a ng-click="users.logout()">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+    <nav class="grey lighten-4 subnav">
+      <div class="nav-wrapper">
+        <ul id="nav-mobile" class="left hide-on-med-and-down grey-text">
+          <li><a href="">Shop</a></li>
+          <li><a href="badges.html">Buy Kindle</a></li>
+          <li><a href="collapsible.html">Something else</a></li>
+        </ul>
+      </div>
     </nav>
   </header>
 
-  <div layout="row">
-    <div flex="33" offset="33">
-      <div ui-view></div>
-    </div>
-  </div>
+    <div ui-view class="main"></div>
 
 </body>
 </html>

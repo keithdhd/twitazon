@@ -1,75 +1,67 @@
 
-<div layout="column">
+<div layout="row">
+  <div flex="33" offset="33">
+    <div layout="column">
 
-  <div ng-show="users.isLoggedIn()">
-    <h3>Welcome {{ users.user.firstname }}</h3>
+      <div ng-show="users.isLoggedIn()">
+        <h3>Welcome {{ users.user.firstname }}</h3>
+      </div>
+
+      <div ng-show="users.isLoggedIn()">
+        <md-button class="md-raised md-primary md-cornered" ng-click="users.getTwitterData()">Become an Instant Bestseller. Go!</md-button>
+      </div>
+
+    </div>
+
+    <md-content class="md-padding md-theme-amber" ng-hide="users.isLoggedIn()">
+      
+      <md-tabs md-dynamic-height md-border-bottom>
+
+        <md-tab label="login">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">Login</h1>
+            <md-input-container>
+              <label>Email</label>
+              <input ng-model="users.user.email" type="text">
+            </md-input-container>
+            <md-input-container>
+              <label>Password</label>
+              <input type="password" ng-model="users.user.password" type="text">
+            </md-input-container>
+            <md-button class="md-raised md-primary" ng-click="users.authorize()">Login</md-button>
+          </md-content>
+        </md-tab>
+
+        <md-tab label="Sign Up">
+          <md-content class="md-padding">
+            <h1 class="md-display-2">Sign Up</h1>
+            <md-input-container>
+              <label>Email</label>
+              <input ng-model="users.user.email" type="text">
+            </md-input-container>
+            <md-input-container>
+              <label>First Name</label>
+              <input ng-model="users.user.firstname" type="text">
+            </md-input-container>
+            <md-input-container>
+              <label>Last Name</label>
+              <input ng-model="users.user.lastname" type="text">
+            </md-input-container>
+            <md-input-container>
+              <label>@YourTwitterHandle</label>
+              <input ng-model="users.user.twitterHandle" type="text">
+            </md-input-container>
+            <md-input-container>
+              <label>Password</label>
+              <input type="password" ng-model="users.user.password" type="text">
+            </md-input-container>
+            <md-button class="md-raised md-primary" ng-click="users.join()">
+              Sign Up
+            </md-button>
+          </md-content>
+        </md-tab>
+
+      </md-tabs>
+    </md-content>
   </div>
-
-  <div ng-show="users.message">
-    {{ users.message }}
-  </div>
-
-  <div>
-    {{ users.user }}
-  </div>
-
-  <div>
-    {{ users.user.twitterData }}
-  </div>
-
-  <div ng-show="users.isLoggedIn()">
-    <md-button class="md-raised md-primary" ng-click="users.getTwitterData()">Click Here</md-button>
-  </div>
-
 </div>
-
-<md-content class="md-padding md-theme-amber" ng-hide="users.isLoggedIn()">
-  
-  <md-tabs md-dynamic-height md-border-bottom>
-
-    <md-tab label="login">
-      <md-content class="md-padding">
-        <h1 class="md-display-2">Login</h1>
-        <md-input-container>
-          <label>Email</label>
-          <input ng-model="users.user.email" type="text">
-        </md-input-container>
-        <md-input-container>
-          <label>Password</label>
-          <input type="password" ng-model="users.user.password" type="text">
-        </md-input-container>
-        <md-button class="md-raised md-primary" ng-click="users.authorize()">Login</md-button>
-      </md-content>
-    </md-tab>
-
-    <md-tab label="Sign Up">
-      <md-content class="md-padding">
-        <h1 class="md-display-2">Sign Up</h1>
-        <md-input-container>
-          <label>Email</label>
-          <input ng-model="users.user.email" type="text">
-        </md-input-container>
-        <md-input-container>
-          <label>First Name</label>
-          <input ng-model="users.user.firstname" type="text">
-        </md-input-container>
-        <md-input-container>
-          <label>Last Name</label>
-          <input ng-model="users.user.lastname" type="text">
-        </md-input-container>
-        <md-input-container>
-          <label>@YourTwitterHandle</label>
-          <input ng-model="users.user.twitterHandle" type="text">
-        </md-input-container>
-        <md-input-container>
-          <label>Password</label>
-          <input type="password" ng-model="users.user.password" type="text">
-        </md-input-container>
-        <md-button class="md-raised md-primary" ng-click="users.join()">
-          Sign Up
-        </md-button>
-      </md-content>
-    </md-tab>
-
-  </md-tabs>
-</md-content>

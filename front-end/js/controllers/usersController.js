@@ -3,9 +3,9 @@
   .module('Twitzon')
   .controller('UsersController', UsersController)
 
-  UsersController.$inject = ['User','TokenService', 'APP_NAME', 'TwitterFactory'];
+  UsersController.$inject = ['User','TokenService', 'APP_NAME', 'TwitterFactory', '$location'];
 
-  function UsersController(User, TokenService, APP_NAME, TwitterFactory) {
+  function UsersController(User, TokenService, APP_NAME, TwitterFactory, $location) {
     var self = this;
 
     self.all      = [];
@@ -18,7 +18,7 @@
     
     // Console.log our response from the API
     // Set local user
-    if(token) { console.log(res); self.user=res.user }
+    if(token) { console.log(res); self.user=res.user; }
     self.message =  res.message ? res.message : null;
   }
 
@@ -34,25 +34,24 @@
     TokenService.removeToken && TokenService.removeToken();
     self.user = {};
     self.message = null;
+    $location.path("/authorize");
   }
 
   self.isLoggedIn = function() {
     return TokenService.isLoggedIn ? TokenService.isLoggedIn() : false;
   }
 
-  self.getUsers = function() {
-    self.all = User.query();
-  }
-
   self.getTwitterData = function(){
-    console.log("Getting twiter data for " + self.user.twitterHandle);
-    TwitterFactory.getData(self.user.twitterHandle, self.user);
-    console.log(self.user.twitterData);
+    TwitterFactory.getData(self.user.twitterHandle, setTwitterData);
   }
 
-  // Load users only if you are logged in!
+  function setTwitterData(twitterData){
+    self.user.twitterData = twitterData;
+    console.log(twitterData);
+  }
+
+  // Load user only if you are logged in!
   if (self.isLoggedIn()) {
-    self.getUsers();
     self.user = TokenService.parseJwt();
   }
 
