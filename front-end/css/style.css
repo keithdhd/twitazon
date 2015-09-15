@@ -12,6 +12,10 @@ body{
   margin: 50px;
 }
 
+.brand-logo{
+  margin-left: 20px;
+}
+
 .mainnav{
   height: 100px;
 }
@@ -35,7 +39,7 @@ body{
 
 .book-cover{
   border: 1px solid black;
-  max-height: 400px;
+  height: 400px;
   max-width: 280px;
   margin: 10px auto;
   background-image: url('../images/subway.jpg');
@@ -81,8 +85,24 @@ body{
   border-bottom: 1px solid lightgrey;
 }
 
+#look{
+  color: #FF9933;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+#inside{
+  color: #003399;
+  font-size: 16px;
+  font-weight: 600;
+}
+
 .stats{
   border-bottom: 1px solid lightgrey;
+}
+
+.stats-list{
+
 }
 
 .expanded-view{
@@ -90,18 +110,22 @@ body{
 }
 
 .top-matter{
-  background-color: #FF9933;
+  /*background-color: #FF9933;*/
   height: 100px;
 }
 
-.sidebar-top{
-  height: 50%;
-  background-color: #FF9933;
+.sidebar-top, .sidebar-bottom{
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background: -webkit-linear-gradient(to top, #B0D16C, #E8F2D5);
+  background: -moz-linear-gradient(to top, #B0D16C, #E8F2D5);
+  background: linear-gradient(to top, #B0D16C, #E8F2D5);
+  text-align: center;
 }
 
 .sidebar-bottom{
-  height: 50%;
-  background-color: red;
+
 }
 
 .more-details{
@@ -121,17 +145,3 @@ body{
   float: left;
 }
 
-
-
-/*----------------------------- */
-/*------- Sticky Footer ------- */
-/*----------------------------- */
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
-main {
-  flex: 1 0 auto;
-}

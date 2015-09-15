@@ -5,9 +5,11 @@
   <!-- Style -->
   <link href='https://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="./bower_components/Materialize/dist/css/materialize.min.css">
   <link rel="stylesheet" type="text/css" href="./bower_components/animate.css/animate.css">
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+
+  <!-- Materialize css compiled from materialize sass -->
+  <link rel="stylesheet" type="text/css" href="./css/materialize.css">
   <link rel="stylesheet" type="text/css" href="./css/style.css">
 
  <!-- Internal JS Resources --> 
@@ -21,7 +23,6 @@
   <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/jquery/dist/jquery.min.js"></script>
  
-
   <script src="js/app.js"></script>
   <script src="js/services/authInterceptor.js"></script>
   <script src="js/services/tokenService.js"></script>
@@ -44,7 +45,7 @@
     </nav>
     <nav class="grey lighten-4 subnav">
       <div class="nav-wrapper">
-        <ul id="nav-mobile" class="left hide-on-med-and-down grey-text">
+        <ul id="nav-mobile" class="left hide-on-med-and-down black-text">
           <li><a href="">Shop</a></li>
           <li><a href="">Buy Kindle</a></li>
           <li><a href="">Something else</a></li>
@@ -55,30 +56,30 @@
 
     <div ui-view class="main"></div>
 
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
-          <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
+    <footer class="page-footer">
       <div class="container">
-      © 2015 Copyright Text
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </footer>
+      <div class="footer-copyright">
+        <div class="container">
+        © 2014 Copyright Text
+        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+        </div>
+      </div>
+    </footer>
 </body>
 </html>
