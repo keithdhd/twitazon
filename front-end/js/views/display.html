@@ -25,7 +25,7 @@
 
     </div>
 
-   <div class="col s6 m6">
+   <div class="col s7 m7">
     
     <div class="book-profile">
       <span class="book-title">The {{ users.user.twitterData.description }} ({{users.user.twitterData.created_at}})</span>
@@ -38,26 +38,26 @@
     <div class="stats">
 
       <ul class="stats-list">
-        <li>        Screen name: screen name</li>
-        <li>   Number of Tweets: 78</li>
-        <li>Number of Followers: 1</li>
-        <li>  Number of Friends: 25</li>
-        <li>         Appears on: 750 lists</li>
+        <li>        Screen name: {{ users.user.twitterData.screen_name }}</li>
+        <li>   Number of Friends:{{ users.user.twitterData.friends_count }}</li>
+        <li>Number of Followers: {{ users.user.twitterData.followers_count }}</li>
+        <li>  Number of Friends: {{ users.user.twitterData.friends_count }}</li>
+        <li>         Written in: {{ users.user.twitterData.time_zone }}</li>
       </ul>
 
     </div>
 
     <div class="more-details">
       <ul>
-        <li>Length: 448 pages</li>
-        <li>Word Wise: Enabled</li>
-        <li>Don't have a Kindle? Get your Kindle here or start reading now with a free Kindle Reading App.</li>
+        <li>Length: {{ users.user.twitterData.statuses_count }} tweets</li>
+        <li>On the web: <a class="underline" href="{{ users.user.twitterData.entities.url.urls[0].expanded_url }}">{{ users.user.twitterData.entities.url.urls[0].expanded_url }}</a></li>
+        <li>Don't have a Twitazon? <a class="underline" href="#authorize">Sign up here</a></li>
       </ul>
     </div>
 
   </div>
 
-  <div class="col s3 m3 sidebar">
+  <div class="col s2 m2 sidebar">
     <div class="sidebar-top">
       <md-input-container>
         <label>Search</label>
@@ -71,7 +71,7 @@
   <div class="row">
     <div class="col s12 m12 about-author">
       <h1>More About The Author</h1>
-      <p><a class="underline" href=""> Visit {{ users.user.twitterData.name }}'s Twitter page</a></p>
+      <p><a class="underline" href="{{ users.user.twitterData.url}}"> Visit {{ users.user.twitterData.name }}'s Twitter page</a></p>
       <div class="biography">
         <img ng-src="{{ users.user.twitterData.profile_image_url}}" alt="{{ users.user.twitterData.name }}">
         <p>

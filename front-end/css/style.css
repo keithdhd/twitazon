@@ -118,14 +118,11 @@ body{
   height: 200px;
   border-radius: 10px;
   margin-bottom: 20px;
+  padding: 5px;
   background: -webkit-linear-gradient(to top, #B0D16C, #E8F2D5);
   background: -moz-linear-gradient(to top, #B0D16C, #E8F2D5);
   background: linear-gradient(to top, #B0D16C, #E8F2D5);
   text-align: center;
-}
-
-.sidebar-bottom{
-
 }
 
 .more-details{
