@@ -19,7 +19,8 @@ UserSchema.set('toJSON', {
       lastname: ret.lastname,
       email: ret.email,
       twitterHandle: ret.twitterHandle,
-      access_token: ret.access_token
+      access_token: ret.access_token,
+      linkedin: ret.linkedin
     };
     return returnJson;
   }

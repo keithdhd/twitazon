@@ -73,7 +73,7 @@ function linkedInLogin(req, res, next){
         console.log("NO USER")
         // If not, fetch additional user information from linkedin
         request.get({ 
-          url: "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,headline,picture-url,industry,location,num-connections,specialties,positions,public-profile-url)?oauth2_access_token=" + access_token + '&format=json', 
+          url: "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,interests,headline,picture-url,industry,summary,location,num-connections,specialties,positions,picture-urls)?oauth2_access_token=" + access_token + '&format=json', 
           json: true 
         }, function(error, response, body){
           console.log(response.body)
@@ -96,6 +96,7 @@ function linkedInLogin(req, res, next){
                   token: token,
                   user: user
                 });
+
               });
             }
             else{
@@ -103,6 +104,7 @@ function linkedInLogin(req, res, next){
               var newUser           = new User();
               newUser.email         = response.body.emailAddress;
               newUser.linkedin      = response.body;
+              newUser.access_token  = access_token;
 
               newUser.save(function(err, user) {
                 if (err) return done(err);
@@ -114,6 +116,7 @@ function linkedInLogin(req, res, next){
                   token: token,
                   user: user
                 });
+                
               });
             };
           });

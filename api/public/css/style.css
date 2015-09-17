@@ -6,6 +6,12 @@ h2 {
   color: #FF9933;
   font-size: 20px; }
 
+.nav-wrapper li {
+  padding-left: 20px; }
+
+.star-rating {
+  height: 15px; }
+
 .underline {
   text-decoration: underline;
   color: #003399; }
@@ -14,7 +20,8 @@ h2 {
   margin: 50px; }
 
 .brand-logo {
-  margin-left: 20px; }
+  margin-left: 20px;
+  margin-top: 20px; }
 
 .mainnav {
   height: 100px; }
@@ -34,37 +41,45 @@ h2 {
   width: 20px; }
 
 .look-inside {
-  background-color: #f2f2f2;
   text-align: right;
   margin: 10px auto;
   width: 280px; }
 
 .book-cover {
   border: 1px solid black;
-  height: 400px;
+  min-height: 410px;
   max-width: 280px;
   margin: 10px auto;
-  background-image: url("../images/subway.jpg");
-  opacity: 0.9; }
+  background-color: #DA3F3D; }
 
 .book-cover-author {
   color: white;
   font-family: 'Oswald', sans-serif;
   text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-  font-size: 58px;
+  font-size: 38px;
   padding: 5px;
   text-transform: uppercase;
   position: relative;
-  top: 40px;
-  text-align: center; }
+  text-align: right; }
 
 .book-cover-title {
   font-family: 'Oswald', sans-serif;
-  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
-  font-size: 60px;
-  color: #EB4E47;
-  text-align: center;
-  margin-top: 40px; }
+  font-size: 50px;
+  line-height: 48px;
+  color: black;
+  text-align: left;
+  position: relative;
+  text-transform: uppercase;
+  top: 25px;
+  margin-left: 20px;
+  margin-bottom: 10px; }
+
+.with {
+  font-size: 16px;
+  margin: 0; }
+
+.love {
+  font-size: 68px; }
 
 .book-cover-subtitle {
   font-size: 12px;
@@ -127,5 +142,11 @@ h2 {
 .biography img {
   float: left;
   margin: 10px; }
+
+.review-row {
+  background-color: #f4f4cf;
+  margin: 3px;
+  width: 150px;
+  height: 20px; }
 
 /*# sourceMappingURL=style.css.map */

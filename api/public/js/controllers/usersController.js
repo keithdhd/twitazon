@@ -10,6 +10,7 @@
 
     self.all              = [];
     self.user             = {};
+    self.users            = {};
     self.screenNameSearch = '';
     self.APP_NAME         = APP_NAME; 
 
@@ -53,24 +54,29 @@
     return TokenService.isLoggedIn ? TokenService.isLoggedIn() : false;
   }
 
-  self.getTwitterData = function(){
+  self.getTwitterData = function(otherUser){
     var search_string; 
+  
+    if(otherUser) self.user = otherUser;  
+
     if(self.screenNameSearch)
       search_string = self.screenNameSearch;
     else
       search_string = self.user.twitterHandle;
     
+    self.all = User.query();
+
     TwitterFactory.getData(search_string, setTwitterData);
     TwitterFactory.getTimeline(search_string, setTimeLine);
+
   } 
 
   function setTwitterData(twitterData){
     self.user.twitterData = processTwitterData(twitterData);
-    console.log(twitterData);
+    console.log(self.user);
   }
 
   function setTimeLine(twitterData){
-    console.log(twitterData);
     for (var i = 0; i < twitterData.length; i++) {
       twitterData[i].created_at = new Date(twitterData[i].created_at);
       twitterData[i].created_at = twitterData[i].created_at.toDateString();
@@ -87,10 +93,18 @@
     returnData.bookType   = bookTypes[Math.floor(Math.random() * 3)];
     returnData.created_at = new Date(twitterData.created_at).getFullYear();
 
-    console.log(returnData.created_at);
-
     // Set the price
     returnData.price = twitterData.statuses_count / 100; 
+
+    // Do the location
+    // if(twitterData.time_zone){
+    //   returnData.location = twitterData.time_zone;
+    // }
+    // else{
+      var arr = twitterData.location.split(",");
+      var loc = arr.splice(0,1).join("");
+      returnData.location = loc;
+    //}
 
     // Set the book cover image
 
