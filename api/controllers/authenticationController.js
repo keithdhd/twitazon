@@ -14,7 +14,8 @@ function signup(req, res, next) {
     return res.status(200).send({ 
       success: true,
       message: "Welcome budding author.",
-      token: token
+      token: token,
+      user: user
     });
   })(req, res, next);
 };
@@ -41,13 +42,6 @@ function login(req, res, next) {
 };
 
 function linkedInLogin(req, res, next){  
- //  console.log("about to login to linkedin");
-
- // passport.authenticate('linkedin', { state: 'true' }),
- // function(req, res){
- //   // The request will be redirected to Linkedin for authentication, so this
- //   // function will not be called.
- // };
 
   var accessTokenUrl = "https://www.linkedin.com/uas/oauth2/accessToken";
 
@@ -79,53 +73,59 @@ function linkedInLogin(req, res, next){
         console.log("NO USER")
         // If not, fetch additional user information from linkedin
         request.get({ 
-          url: "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,headline,picture-url,industry,location,num-connections,specialties,positions,public-profile-url)?oauth2_access_token="+access_token + '&format=json', 
+          url: "https://api.linkedin.com/v1/people/~:(id,first-name,last-name,email-address,headline,picture-url,industry,location,num-connections,specialties,positions,public-profile-url)?oauth2_access_token=" + access_token + '&format=json', 
           json: true 
         }, function(error, response, body){
           console.log(response.body)
+          // Search for user using returned email & update access_token (as it might have expired)
+          User.findOne({
+            email: response.body.emailAddress
+          } ,function(err, user){
 
+            if(user){
+              user.access_token = access_token;
+              user.linkedin = response.body;
+
+              user.save(function(err) {
+                if (err) return done(err);
+                var token = jwt.sign(user, secret, { expiresInMinutes: expires_in });
+
+                return res.status(200).send({
+                  success: true,
+                  message: 'Get your writing boots on.',
+                  token: token,
+                  user: user
+                });
+              });
+            }
+            else{
+              // If not, register user using linkedin data
+              var newUser           = new User();
+              newUser.email         = response.body.emailAddress;
+              newUser.linkedin      = response.body;
+
+              newUser.save(function(err, user) {
+                if (err) return done(err);
+                var token = jwt.sign(user, secret, { expiresInMinutes: expires_in });
+
+                return res.status(200).send({
+                  success: true,
+                  message: 'Welcome new boy.',
+                  token: token,
+                  user: user
+                });
+              });
+            };
+          });
         });
-      }
-
-      // var token = jwt.sign(user, secret, { expiresInMinutes: expires_in });
-
-      // return res.status(200).send({
-      //   success: true,
-      //   message: 'Get your writing boots on.',
-      //   token: token,
-      //   user: user
-      // });
+      };
     });
-
-    // If not, fetch additional user information from linkedin
-
-    // Search for user using returned email & update access_token (as it might have expired)
-
-    // If not, register user using linkedin data
-
-  });
+ });
 }
 
-function linkedInLoginCallback(req, res){
-  // console.log("linkedinCallback"); 
-  // console.log(req.body);
-  // // Step 2a. Link user accounts.
-  // if (req.headers.authorization) {
-    
-  //   // User.findOne({ 'data.id': body.user.id }, function(err, user) {
-  //   //   console.log("USER FOUND!");
+function linkedInLoginCallback(){
 
-  //   //   // Grabbing the Bearer token
-  //   //   var token = req.headers.authorization.split(' ')[1];
-  //   //   var payload = jwt.decode(token, SECRET);
-
-  //   //   // Return the user
-  //   //   return res.send({ token: token, user: user });
-  //   // });
-
-  // } 
 }
-
 
 module.exports = {
   signup: signup,
