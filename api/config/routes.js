@@ -10,6 +10,10 @@ var twitterController        = require('../controllers/twitterController');
 router.post('/authorize', authenticationController.login);
 router.post('/join', authenticationController.signup);
 router.get('/twitterData/:screen_name', twitterController.getData);
+router.get('/timeline/:screen_name', twitterController.getTimeline);
+
+router.get('/auth/linkedin', authenticationController.linkedInLogin);
+router.get('/auth/linkedin/callback', authenticationController.linkedInLoginCallback);
 
 router.route('/users')
   .get(usersController.indexUsers)

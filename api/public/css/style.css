@@ -1,0 +1,131 @@
+body {
+  font-family: Verdana, Arial, 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: small; }
+
+h2 {
+  color: #FF9933;
+  font-size: 20px; }
+
+.underline {
+  text-decoration: underline;
+  color: #003399; }
+
+.main {
+  margin: 50px; }
+
+.brand-logo {
+  margin-left: 20px; }
+
+.mainnav {
+  height: 100px; }
+
+.subnav {
+  height: 30px;
+  line-height: 30px;
+  font-color: black; }
+
+.price {
+  font-size: 15px;
+  color: #900;
+  font-weight: bold; }
+
+.envelope {
+  height: 20px;
+  width: 20px; }
+
+.look-inside {
+  background-color: #f2f2f2;
+  text-align: right;
+  margin: 10px auto;
+  width: 280px; }
+
+.book-cover {
+  border: 1px solid black;
+  height: 400px;
+  max-width: 280px;
+  margin: 10px auto;
+  background-image: url("../images/subway.jpg");
+  opacity: 0.9; }
+
+.book-cover-author {
+  color: white;
+  font-family: 'Oswald', sans-serif;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  font-size: 58px;
+  padding: 5px;
+  text-transform: uppercase;
+  position: relative;
+  top: 40px;
+  text-align: center; }
+
+.book-cover-title {
+  font-family: 'Oswald', sans-serif;
+  text-shadow: 1px 0 0 #000, 0 -1px 0 #000, 0 1px 0 #000, -1px 0 0 #000;
+  font-size: 60px;
+  color: #EB4E47;
+  text-align: center;
+  margin-top: 40px; }
+
+.book-cover-subtitle {
+  font-size: 12px;
+  color: #f2f2f2;
+  text-align: center;
+  text-transform: uppercase; }
+
+.book-title {
+  color: #000;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.7em;
+  font-weight: normal; }
+
+.book-profile {
+  border-bottom: 1px solid lightgrey; }
+
+#look {
+  color: #FF9933;
+  font-size: 20px;
+  font-weight: 600; }
+
+#inside {
+  color: #003399;
+  font-size: 16px;
+  font-weight: 600; }
+
+.stats {
+  border-bottom: 1px solid lightgrey; }
+
+.expanded-view {
+  text-align: center; }
+
+.top-matter {
+  /*background-color: #FF9933;*/
+  height: 100px; }
+
+.sidebar-top, .sidebar-bottom {
+  height: 200px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 5px;
+  background: -webkit-linear-gradient(to top, #B0D16C, #E8F2D5);
+  background: -moz-linear-gradient(to top, #B0D16C, #E8F2D5);
+  background: linear-gradient(to top, #B0D16C, #E8F2D5);
+  text-align: center; }
+
+.more-details {
+  border-bottom: 1px solid lightgrey; }
+
+.more-details li {
+  list-style: circle; }
+
+.latestTweets {
+  border-bottom: 1px solid lightgrey; }
+
+.about-author h1 {
+  color: #FF9933;
+  font-size: 20px; }
+
+.biography img {
+  float: left;
+  margin: 10px; }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,32 @@
+{
+  "name": "twitazon",
+  "version": "0.0.0",
+  "authors": [
+    "keithdhd <keith@keithdouglas.co.uk>"
+  ],
+  "description": "Don't judge a book by it's cover.",
+  "main": "app.js",
+  "keywords": [
+    "amazon",
+    "cv"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Materialize": "materialize#~0.97.0",
+    "angular-jwt": "~0.0.9",
+    "angular-material": "~0.11.0",
+    "angular-messages": "~1.4.5",
+    "angular-resource": "~1.4.5",
+    "angular-ui-router": "~0.2.15",
+    "animate.css": "~3.4.0",
+    "satellizer": "~0.12.5"
+  }
+}
