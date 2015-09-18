@@ -8,9 +8,31 @@ h2{
   font-size: 20px;
 }
 
+.searchBar{
+  margin-left: 400px;
+  img{
+    padding-top: 20px;
+  }
+}
+
+.introText{
+  text-align: center;
+}
+
+.go-button{
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  border: 0;
+  font-size: 40px;
+  background-color: #FF9933;
+  color: #f2f2f2;
+}
+
 .nav-wrapper{
   li{
     padding-left: 20px;
+    padding-right: 20px;
   }
 }
 

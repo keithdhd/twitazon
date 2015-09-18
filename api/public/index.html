@@ -39,6 +39,9 @@
         <a href="#" class="brand-logo">
           <img src="../images/twitazon-logo.png">
         </a>
+        <span class="searchBar">
+          <img src="../images/search-bar.png" alt="">
+        </span>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li ng-hide="users.isLoggedIn()"><a href="#authorize">Login</a></li>
           <li ng-hide="users.isLoggedIn()"><a href="#authorize">Sign up</a></li>
@@ -53,7 +56,7 @@
           <li>Write a Bestseller</li>
           <li>{{ users.user.twitterData.screen_name }}</li>
           <li>{{ users.user.twitterData.location }}</li>
-          <li>{{ users.user.twitterData.status_count }} Tweets</li>
+          <li>{{ users.user.twitterData.statuses_count }} Tweets</li>
           <li>{{ users.user.twitterData.followers_count }} Followers</li>
         </ul>
       </div>
