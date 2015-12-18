@@ -26,8 +26,6 @@ function isAuthenticated(req, res, next) {
   next();
 }
 
-// app.use("/api", isAuthenticated);
-
 // JWT access control. Important to have these before our routes!
  app
   .use('/api', expressJWT({secret: config.secret})
